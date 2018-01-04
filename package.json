@@ -1,0 +1,16 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "Chat bot test",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "author": "Saugandh",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.7",
+    "lite-server": "^2.3.0"
+  }
+}

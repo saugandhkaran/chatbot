@@ -1,0 +1,40 @@
+<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<link rel="stylesheet" type="text/css" href="custom.css">
+<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+
+
+<div ng-app="bot">
+	<head><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+	<body class="background">
+		<div style="margin:0 auto;align:center">
+			<div ng-controller='testController' class="row">
+
+				<div class="bot-window">
+					<div class="chat-header">
+						<h5 style="padding-top:1%; padding-bottom:1%;">Toka katha kahuchi</h5>
+					</div>
+
+					<div class="message-box">
+						<div ng-repeat="conversation in conversationList">
+							<p class="messages" style="color:black;margin-left: 1%;">{{conversation.question}}</p>
+					
+							<p class="responses" style="color:black;">{{conversation.answer}}</p>
+						</div>
+					</div>
+
+					<div class="message-bottom">
+						<div class="input-message"><span>
+						<form>
+							<textarea required style="width: 85%;color: black;margin-top: 2%;margin-left: 5px;" ng-model="question"></textarea>
+							<button type="submit" class="button" ng-click="submit()">Send</button></span>
+						</form>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+</div>

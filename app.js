@@ -3,12 +3,17 @@ var app = angular.module('bot',[]);
 app.controller('testController',['$scope','$http', function($scope, $http){
 	$scope.question = '';
 	$scope.conversationList = [];
+	$scope.timeStamps = [];
 
 	$scope.submit = function(){
+		var date = new Date();
 		var conversation = {};
 		conversation.question = $scope.question;
+		conversation.timeStamp = date.toLocaleString();
+		conversation.id = $scope.conversationList.length;
 		var question = $scope.question;
 		$scope.question = '';
+
 		var data = {
 				    "contexts": [
 				      ""
@@ -31,7 +36,7 @@ app.controller('testController',['$scope','$http', function($scope, $http){
 						}).then(function(){
 							$scope.conversationList.push(conversation);
 						})
-	}	
+	}
 
 
 }])

@@ -16,18 +16,19 @@
 						<h5 style="padding-top:1%; padding-bottom:1%;">Toka katha kahuchi</h5>
 					</div>
 
+
 					<div class="message-box">
-						<div ng-repeat="conversation in conversationList">
-							<p class="messages" style="color:black;margin-left: 1%;">{{conversation.question}}</p>
-					
-							<p class="responses" style="color:black;">{{conversation.answer}}</p>
-						</div>
+						<div ng-repeat="conversation in conversationList" style="margin-top:36px;">
+							<div class="messages" style="color:black;">{{conversation.question}}</div>
+							<div class="responses" style="color:white;margin-top: 5px;">{{conversation.answer}}</div>
+							<div style="color:black;font-size:0.8em;margin-left: 2%;">{{conversation.timeStamp}}</div>
 					</div>
+				</div>
 
 					<div class="message-bottom">
 						<div class="input-message"><span>
 						<form>
-							<textarea required style="width: 85%;color: black;margin-top: 2%;margin-left: 5px;" ng-model="question"></textarea>
+							<input required style="width: 90%;color: black;margin-top: 2%;margin-left: 5px;padding: 10px 2px 10px 2px;" ng-model="question"/>
 							<button type="submit" class="button" ng-click="submit()">Send</button></span>
 						</form>
 						</div>

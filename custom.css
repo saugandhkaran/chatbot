@@ -34,11 +34,11 @@ font-family: 'Work Sans', sans-serif;
 }
 
 .message-box{
-	background-color:white;
+  background-color:white;
   position: relative;
   overflow-y: scroll;
-  max-height: 600px;
-  min-height: 600px;
+  max-height: 400px;
+  min-height: 434px;
 }
 
 .message-box .responses{

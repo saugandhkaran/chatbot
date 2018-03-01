@@ -17,7 +17,7 @@ background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1
 
 body{
 color:white;
-font-family: 'Work Sans', sans-serif;
+font-family: 'Lato', sans-serif;
 }
 
 .bot-window{
@@ -29,16 +29,15 @@ font-family: 'Work Sans', sans-serif;
 	background-color: black;
 	color:white;
 	text-align:center;
-	margin-top: -33px;
-  font-size: 1.5em;
+  	font-size: 1.5em;
 }
 
 .message-box{
   background-color:white;
   position: relative;
   overflow-y: scroll;
-  max-height: 400px;
-  min-height: 434px;
+  padding-bottom: 2%;
+  height:400px;
 }
 
 .message-box .responses{
@@ -64,30 +63,12 @@ font-family: 'Work Sans', sans-serif;
 .message-bottom{
 	background-color: white;
 	border:1px solid black;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-bottom:2%;
 }
 
-.button{
-	padding:7px 11px 9px 13px;
-	background-color: #3b3e42;
-	font-weight: bold;
-	border: none;
-	color:white;
-	font-family: 'Work Sans', sans-serif;
-}
 
-.input-field {
-	padding: 10px 5px 10px 5px;
-	border:none;
-	border-bottom: 2px solid black;
-	background-color: transparent;
-	width:80%;
-	margin-left: 4%;
-	font-family: 'Work Sans', sans-serif;
-}
-
-.input-field::placeholder {
-	color:white;
-}
 .list-field{
 	padding: 10px 5px 10px 5px;
 	border:none;
@@ -106,14 +87,4 @@ textarea:focus, input:focus{
     color:white;
 }
 
-
-@media screen and (max-width: 600px) {
-	.todo-card {
-	border: 1px solid grey;
-	width:100%;
-	min-height: 133px;
-	background-color: #93969b;
-	color:white;
-	margin-left:0%;
-}
 }

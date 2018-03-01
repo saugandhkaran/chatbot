@@ -1,35 +1,50 @@
 <script type="text/javascript" src="node_modules/angular/angular.js"></script>
 <script type="text/javascript" src="app.js"></script>
+<link rel="stylesheet" type="text/css" href="skeleton.css">
+<link rel="stylesheet" type="text/css" href="normalize.css">
 <link rel="stylesheet" type="text/css" href="custom.css">
-<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
 
 
 <div ng-app="bot">
 	<head><meta name="viewport" content="width=device-width, initial-scale=1"></head>
 	<body class="background">
-		<div style="margin:0 auto;align:center">
+		<div style="margin:0 auto;">
 			<div ng-controller='testController' class="row">
 
-				<div class="bot-window">
+				<div class="seven columns">
 					<div class="chat-header">
-						<h5 style="padding-top:1%; padding-bottom:1%;">Toka katha kahuchi</h5>
+						<h5>Toka katha kahuchi</h5>
 					</div>
 
 
-					<div class="message-box">
-						<div ng-repeat="conversation in conversationList" style="margin-top:36px;">
-							<div class="messages" style="color:black;">{{conversation.question}}</div>
-							<div class="responses" style="color:white;margin-top: 5px;">{{conversation.answer}}</div>
-							<div style="color:black;font-size:0.8em;margin-left: 2%;">{{conversation.timeStamp}}</div>
+					<div id="content" class="message-box">
+						<div ng-repeat="conversation in conversationList">
+							<div>
+								<div style="color:black;">{{conversation.question}}</div>
+								<div style="color:black;font-size:0.8em;margin-left: 2%;">{{conversation.timeStamp}}</div>
+							</div>
+							<div style="text-align:right;">
+								<div style="color:black;margin-top: 5px;">{{conversation.answer}}</div>
+								<div ng-repeat="option in conversation.options" style="margin-right:2%;">
+									<button class="button" ng-click="selectedFromOption(option.id)">{{option.value}}</button>
+								</div>
+								<div style="color:black;font-size:0.8em;margin-left: 2%;">{{conversation.timeStamp}}</div>
+							</div>
+							
+						</div>
 					</div>
-				</div>
 
 					<div class="message-bottom">
-						<div class="input-message"><span>
-						<form>
-							<input style="width: 85%;color: black;margin-top: 2%;margin-left: 5px;padding: 10px 2px 10px 2px;" ng-model="question"/>
-							<button type="submit" class="button" ng-click="submit()">Send</button></span>
+						<div class="row">
+							<form>
+							<div class="ten columns">
+							<input class="u-full-width" style="color: black;" type="text" ng-model="question"/>
+							</div>
+							<div class="two columns">
+							<button class="button-primary" type="submit" onclick="move()" class="button" ng-click="submit()">Send</button></span>
+							</div>
 						</form>
 						</div>
 					</div>
@@ -38,4 +53,10 @@
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript">
+	function move(){
+		var elmnt = document.getElementById("content");
+		elmnt.scrollIntoView();
+		}
+	</script>
 </div>
